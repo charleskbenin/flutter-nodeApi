@@ -10,7 +10,7 @@ app.use(express.json())
 app.use(express.urlencoded({
     extended: true
 }))
-const PORT = "8000"
+const PORTs = "8000"
 
 // app.use("/", router)
 
@@ -28,6 +28,7 @@ mongoose.connect(
 );
 app.use("/", router)
 
-app.listen(PORT, ()=>{
-    console.log(`server running at localhost: ${PORT}`)
+app.listen(process.env.PORT || PORTs, ()=>{
+    console.log(`server running at localhost: ${PORTs}`)
+    
 })
